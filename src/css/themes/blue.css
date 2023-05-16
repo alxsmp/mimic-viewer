@@ -1,0 +1,27 @@
+:root{
+    --back-1:#F2F2F2;
+    --back-2:#C9F2EE;
+    --back-3:#049DBF;
+    --back-4:#04B2D9;
+    --back-5:#048ABF;
+
+
+    --fore-1:#00040D;
+    --fore-2:#052042;
+    --fore-3:#225079;
+    --fore-4:#6f8fc0;
+    --fore-5:#dbe3ec;
+
+    --highlight-1:#040FD9;
+    --highlight-2:#040DBF;
+    --highlight-3:#030A8C;
+    --highlight-4:#020659;
+    --highlight-5:#010440;
+
+    --back-graphic:
+    radial-gradient(calc(1.28*30px + 11.25px/2) at left 50% bottom calc(-.8*30px),#1d1d1d calc(100% - 11.25px),#000000 calc(101% - 11.25px) 100%,#0000 101%) calc(2*30px) calc(-1*calc(1.5*30px + 11.25px)),
+    radial-gradient(calc(1.28*30px + 11.25px/2) at left 50% bottom calc(-.8*30px),#101010 calc(100% - 11.25px),#000000 calc(101% - 11.25px) 100%,#0000 101%) calc(-1*30px) calc(calc(1.5*30px + 11.25px)/-2),
+    radial-gradient(calc(1.28*30px + 11.25px/2) at left 50% top    calc(-.8*30px),#101010 calc(100% - 11.25px),#000000 calc(101% - 11.25px) 100%,#0000 101%) 0 calc(1.5*30px + 11.25px),
+    radial-gradient(calc(1.28*30px + 11.25px/2) at left 50% top    calc(-.8*30px),#1d1d1d calc(100% - 11.25px),#000000 calc(101% - 11.25px) 100%,#0000 101%) 30px calc(calc(1.5*30px + 11.25px)/ 2),
+    linear-gradient(#1d1d1d 50%,#101010 0);
+}
