@@ -1,1 +1,117 @@
-../../../mimic-3d/src/css/Resizers.module.css
+.inactive{
+    display: none;
+  }
+
+:root{
+    --size:12px;
+    --radius-harsh: 25%;
+    --radius-soft: 100%;
+  }
+
+.resizerTopLeft {
+  width: var(--size);
+  height: var(--size);
+  z-index: 10;
+  position: absolute;
+  border: 1px solid #000000;
+  left: -15px;
+  top: -15px;
+  border-radius: var(--radius-harsh);
+  border-bottom-right-radius: var(--radius-soft);
+  background: #FFFFFF;
+  }
+  
+  .resizerTopRight {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    right: -15px;
+    top: -15px;
+    border-radius: var(--radius-harsh);
+    border-bottom-left-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerBottomLeft {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    left: -15px;
+    bottom: -15px;
+    border-radius: var(--radius-harsh);
+    border-top-right-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerBottomRight {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    right: -15px;
+    bottom: -15px;
+    border-radius: var(--radius-harsh);
+    border-top-left-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerRight {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    right: -15px;
+    top: calc(50% - 7px);
+    border-radius: var(--radius-harsh);
+    border-bottom-left-radius: var(--radius-soft);
+    border-top-left-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerLeft {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    left: -15px;
+    top: calc(50% - 7px);
+    border-radius: var(--radius-harsh);
+    border-bottom-right-radius: var(--radius-soft);
+    border-top-right-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerBottom {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    left: calc(50% - 7px);
+    bottom: -15px;
+    border-radius: var(--radius-harsh);
+    border-top-left-radius: var(--radius-soft);
+    border-top-right-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
+  
+  .resizerTop {
+    width: var(--size);
+    height: var(--size);
+    z-index: 10;
+    position: absolute;
+    border: 1px solid #000000;
+    left: calc(50% - 7px);
+    top: -15px;
+    border-radius: var(--radius-harsh);
+    border-bottom-left-radius: var(--radius-soft);
+    border-bottom-right-radius: var(--radius-soft);
+    background: #FFFFFF;
+  }
