@@ -1,24 +1,15 @@
-import { createEffect, createSignal, For, Match, Show, Switch } from "solid-js";
+import { For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import { createMutable } from "solid-js/store"
-import { Mimic as Mimic, MimicItem } from "../../generalComponents/MimicAndMimicItem";
-import MimicItemElement, { BaseItemWrapper } from "../../Elements/MimicItemElement";
-import Settings from "../../Settings";
-import { SettingsItems } from "../../SettingsItems";
-import ViewerHeader from "./ViewerHeader";
-import { signIn, Token } from "../../api/apiSignIn";
-import { LiveMachines, LiveMachine } from "../../api/live/apiLiveData";
-import { fetchTagValues, fetchLiveMachines } from "../../api/live/apiLive";
 
-
-
+import { Mimic } from "../ItemRendering/MimicAndMimicItem";
+import MimicItemElement from "../ItemRendering/MimicItemElement";
 
 
 export default function LiveMimic(props: {
     content: Object,
     onRefresher: (refresher: () => void) => void,
     getTagValues: (tag: string[]) => Promise<any[]>,
-    // darkTheme?: boolean,
     style?: JSX.CSSProperties
 }) {
 
@@ -45,8 +36,6 @@ export default function LiveMimic(props: {
 
 
     return (
-            <div style={{ width: '100%', height: '100%' }}>
-
                 <div style={{ ...props.style, position: 'relative', flex: 1 }}>
                     <For each={mimic.items}>
                         {(item) =>
@@ -74,7 +63,6 @@ export default function LiveMimic(props: {
                         }
                     </For>
                 </div>
-            </div>
     )
 }
 

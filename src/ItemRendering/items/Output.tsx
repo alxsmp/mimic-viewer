@@ -1,5 +1,5 @@
 import { JSX } from "solid-js/jsx-runtime";
-import adjustColor from "../../generalComponents/adjustColor";
+import adjustColor from "../adjustColor";
 
 // Draws a red or gray circle to square to ndicate whether the value is true
 export default function OutputIndicator(props: {

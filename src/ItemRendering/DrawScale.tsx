@@ -1,6 +1,6 @@
 import { For, Show, createEffect, createMemo } from "solid-js"
 import { JSX } from "solid-js/jsx-runtime"
-import { range } from "../utils/range"
+
 
 export default function DrawScale(props: {
     //define the x and y of the scales start and end as a pair of numbers
@@ -152,3 +152,6 @@ export default function DrawScale(props: {
     </>
 }
 
+export function range(start: number, stop: number, step = 1) : number[] {
+    return Array(Math.ceil((stop - start) / step)).fill(start).map((x, y) => x + y * step)
+}

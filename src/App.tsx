@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
-import LiveMimic from "./mimic/Viewer/LiveMimic";
-import { Mimic } from "./generalComponents/MimicAndMimicItem";
+import LiveMimic from "./mimicViewer/LiveMimic";
+import { Mimic } from "./ItemRendering/MimicAndMimicItem";
 import { Token, signIn } from "./api/apiSignIn";
 import { fetchLiveMachines, fetchTagValues } from "./api/live/apiLive";
 import { LiveMachines, LiveMachine } from "./api/live/apiLiveData";

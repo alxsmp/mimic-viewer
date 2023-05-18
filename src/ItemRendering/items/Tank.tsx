@@ -1,6 +1,6 @@
 import { createEffect, createMemo, For, JSX } from "solid-js"
-import DrawScale from "../../generalComponents/DrawScale"
-import adjustColor from "../../generalComponents/adjustColor"
+import DrawScale from "../DrawScale"
+import adjustColor from "../adjustColor"
 
 export default function Tank(props: {
     width: number

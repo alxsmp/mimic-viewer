@@ -1,5 +1,5 @@
 import { For, JSX } from "solid-js"
-import adjustColor from "../../generalComponents/adjustColor";
+import adjustColor from "../adjustColor";
 
 // Draws a green or gray circle to indicate whether the value is true
 export default function Lamp(props: {

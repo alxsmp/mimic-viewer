@@ -1,7 +1,7 @@
 import { createEffect, createMemo, For, JSX } from "solid-js"
-import DrawScale from "../../generalComponents/DrawScale"
-import adjustColor from "../../generalComponents/adjustColor"
-import DrawCurvedScale from "../../generalComponents/DrawRadialScale"
+import DrawScale from "../DrawScale"
+import adjustColor from "../adjustColor"
+import DrawCurvedScale from "../DrawRadialScale"
 
 export default function Panel(props: {
     width: number

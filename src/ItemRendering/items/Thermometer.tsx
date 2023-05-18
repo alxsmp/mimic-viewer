@@ -1,6 +1,6 @@
 import { createEffect, createMemo, For, JSX, Show } from "solid-js"
-import adjustColor from "../../generalComponents/adjustColor"
-import DrawScale from "../../generalComponents/DrawScale"
+import adjustColor from "../adjustColor"
+import DrawScale from "../DrawScale"
 
 export default function Thermometer(props: {
     width: number

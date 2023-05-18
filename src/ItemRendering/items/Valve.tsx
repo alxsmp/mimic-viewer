@@ -1,5 +1,5 @@
 import { JSX } from "solid-js/jsx-runtime"
-import adjustColor from "../../generalComponents/adjustColor"
+import adjustColor from "../adjustColor"
 import { Match, Show, createMemo } from "solid-js"
 
 export default function Value(props: {

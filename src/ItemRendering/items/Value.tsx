@@ -1,20 +1,19 @@
 import { For, JSX } from "solid-js"
-import adjustColor from "../../generalComponents/adjustColor";
+import adjustColor from "../adjustColor";
 
-export default function Label(props: {
+export default function Value(props: {
     width: number
     height: number
-    
-    text?: string
-
-    backgroundColor?: string
-    fontColor?: string
+    value: string
+    backgroundColor: string
+    opacity: number
+    fontColor: string
     fontSize: number
     verticalAlign: "top" | "center" | "bottom"
     horizontalAlign: "left" | "center" | "right"
-    opacity: number
     style?: JSX.CSSProperties
     disableAnimation?: boolean
+
 }) {
 
     return <div style={{
@@ -34,7 +33,7 @@ export default function Label(props: {
             
 
         }}>
-        {props.text}
+        {props.value.toString()}
     </div>
 
 }
