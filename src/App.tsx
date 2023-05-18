@@ -1,60 +1,43 @@
-import { Component, Show, createEffect } from "solid-js";
-import LiveMimic, { SystemState, SystemWindow } from "./mimic/Viewer/LiveMimic";
-import styles from './css/App.module.css'
+import { Component } from "solid-js";
+import LiveMimic from "./mimic/Viewer/LiveMimic";
 import { Mimic } from "./generalComponents/MimicAndMimicItem";
-import ViewerHeader from "./mimic/Viewer/ViewerHeader";
-import { createMutable } from "solid-js/store";
+import { Token, signIn } from "./api/apiSignIn";
+import { fetchLiveMachines, fetchTagValues } from "./api/live/apiLive";
+import { LiveMachines, LiveMachine } from "./api/live/apiLiveData";
 
 const App: Component = () => {
 
-//   const state = createMutable<SystemState>(
-//     {
-//         window: SystemWindow.None,
-//         settings: [0, 0],
-//         live: undefined,
-//         token: undefined,
-//         machines: undefined,
-//         machine: undefined
-//     }
-
-// )
-
-// if (localStorage.getItem('State') != null) {
-//     //If state is stored, set to stored state
-//     let saved = JSON.parse(localStorage.getItem('State') ?? '[]') as SystemState
-//     state.settings = saved.settings ?? [0, 0]
-//     state.live = false
-//     state.window = saved.window ?? SystemWindow.None
-
-//     state.token = undefined
-//     state.machines = undefined
-//     state.machine = undefined
-// }
-
-
 const jsonFromMimFile = JSON.parse('{"name":"wd","items":[{"type":"Lamp","tag":"IO.TakeSampleLamp","x":352,"y":178,"width":50,"height":50,"value":true,"onColor":"#62DB45","offColor":"#9C9C9C"}]}') as Mimic
 
-// createEffect(() => {
+    let refresher!: () => void  // hold on to the refresher function so we can call it later
+    setInterval(() => refresher(), 1000)  // call the refresher function every second
 
-//     localStorage.setItem('State', JSON.stringify(state)) // save settings to local storage when they change
-//     if (state.settings == undefined) {
-//         return
-//     }
+
+  //Test Setup for token, machines and machine using the local server
+    let token: Token | null
+    let machines: LiveMachines | null
+    let machine: LiveMachine | null
+    const server = 'http://localhost:80'
+    signIn(server, 'data@adaptivecontrol.com', '').then(newToken => {
+      if (token === null)
+        console.log('no such user or incorrect password')
+      else {
+        token = newToken
+        fetchLiveMachines(token!).then(liveMachines => {
+          machines = liveMachines
+          if (liveMachines.machines.length == 1)
+            machine = liveMachines.machines[0]    
+        })
+      }
+    })
+
     
-//     if (state.settings[1] == 0) {
-//         //Light Mode
-//         const themeLink = document.getElementById('themeLink') as HTMLLinkElement;
-//         themeLink.href = `/src/css/themes/light.css`;
-
-//     }
-//     else {
-//         //Dark Mode
-//         const themeLink = document.getElementById('themeLink') as HTMLLinkElement;
-//         themeLink.href = `/src/css/themes/dark.css`;
-//     }
-// })
-
-  return (<LiveMimic content={jsonFromMimFile} server='http://localhost:80' refreshMs={1000} style={{ width: '100%', height: '100%', "user-select": 'none' }} />
+    
+  return (<LiveMimic content={jsonFromMimFile} 
+         onRefresher={refresher1 => refresher = refresher1}  // make a note of the refresher function
+         getTagValues={async (tags: string[]) => { return fetchTagValues(token!, machine!.name, tags)}}
+         style={{ width: '100%', height: '100%', "user-select": 'none',
+        }} />
   )
 }
   
