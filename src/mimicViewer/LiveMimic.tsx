@@ -2,7 +2,7 @@ import { For } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import { createMutable } from "solid-js/store"
 
-import { Mimic } from "../ItemRendering/MimicAndMimicItem";
+import { Mimic } from "../ItemRendering/MimicAndItemDefinitions";
 import MimicItemElement from "../ItemRendering/MimicItemElement";
 
 

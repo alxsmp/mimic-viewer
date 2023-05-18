@@ -1,7 +1,7 @@
 import Lamp from "./items/Lamp"
 import Output from "./items/Output"
 import Tank from "./items/Tank"
-import { Mimic, MimicItem } from "./MimicAndMimicItem"
+import { Mimic, MimicItem } from "./MimicAndItemDefinitions"
 import Image from "./items/Image"
 import Label from "./items/Label"
 import Value from "./items/Value"
